@@ -1,0 +1,4 @@
+﻿ID;Программа;Тип;Включено по умолчанию;Источник;Особенности
+ExampleDesignApp;Example Design App;MSI;Нет;https://example.invalid/;Тестовая запись, не реальное ПО.
+ExampleRuntime;Example Runtime;Runtime;Нет;https://example.invalid/;Должен попасть в system records, не в кандидаты на загрузку.
+ExampleWebService;Example Web Service;Manual;Нет;https://example.invalid/;Веб-сервис, не устанавливается как desktop-программа.

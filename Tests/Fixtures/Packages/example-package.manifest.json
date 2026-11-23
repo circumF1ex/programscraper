@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0",
+  "packageId": "example-classroom",
+  "packageName": "Example Classroom Package",
+  "packageVersion": "1.0.0",
+  "createdAtUtc": "2026-11-21T10:00:00Z",
+  "createdBy": "fixture",
+  "targetOS": "Windows 10/11 x64",
+  "architecture": "x64",
+  "applications": [
+    {
+      "id": "example-design-app",
+      "version": "1.2.3",
+      "installerType": "MSI",
+      "relativePath": "payload/example-design-app-1.2.3.msi",
+      "sizeBytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publisher": "Example Publisher",
+      "downloadSource": "https://example.invalid/example-design-app-1.2.3.msi",
+      "licenseType": "Free",
+      "selected": true,
+      "required": true,
+      "dependencies": []
+    }
+  ],
+  "installRecipe": {
+    "arguments": ["/qn", "/norestart"],
+    "workingDirectory": "payload",
+    "executionContext": "System",
+    "successExitCodes": [0, 3010],
+    "rebootExitCodes": [1641],
+    "timeoutSeconds": 900,
+    "detectionRules": [
+      {
+        "type": "MSIProductCode",
+        "value": "{11111111-2222-3333-4444-555555555555}"
+      }
+    ]
+  },
+  "prerequisites": [],
+  "payloadFiles": [
+    {
+      "relativePath": "payload/example-design-app-1.2.3.msi",
+      "sizeBytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "validationStatus": "Incomplete"
+}

@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "1.0",
+  "scanId": "22222222-2222-4222-8222-222222222222",
+  "computer": {
+    "name": "LAB-PC02",
+    "osCaption": "Microsoft Windows 10 Pro",
+    "osVersion": "10.0.19045",
+    "architecture": "x64"
+  },
+  "scan": {
+    "startedAtUtc": "2026-11-20T09:05:00Z",
+    "completedAtUtc": "2026-11-20T09:05:20Z",
+    "tool": "ProgramScraper",
+    "toolVersion": "fixture-1.0",
+    "sources": ["HKLM-Uninstall-x64", "User-Uninstall", "User-Hive-NTUSER.DAT"]
+  },
+  "applications": [
+    {
+      "displayName": "Example Design App",
+      "publisher": "Example Publisher",
+      "displayVersion": "1.3.0",
+      "architecture": "x64",
+      "scope": "Machine",
+      "installLocation": "C:\\Program Files\\Example Design App",
+      "uninstallString": "MsiExec.exe /X{33333333-4444-5555-6666-777777777777}",
+      "quietUninstallString": null,
+      "source": "Registry-HKLM-x64",
+      "registryKey": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{33333333-4444-5555-6666-777777777777}",
+      "userName": null,
+      "wingetId": null,
+      "productCode": "{33333333-4444-5555-6666-777777777777}",
+      "categoryHint": "Application"
+    },
+    {
+      "displayName": "Shared Utility",
+      "publisher": "Northwind Tools",
+      "displayVersion": "2.1.0",
+      "architecture": "x64",
+      "scope": "Machine",
+      "installLocation": "C:\\Program Files\\Northwind\\Shared Utility",
+      "uninstallString": "\"C:\\Program Files\\Northwind\\Shared Utility\\uninstall.exe\"",
+      "quietUninstallString": "\"C:\\Program Files\\Northwind\\Shared Utility\\uninstall.exe\" /quiet",
+      "source": "Registry-HKLM-x64",
+      "registryKey": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\SharedUtility-Northwind",
+      "userName": null,
+      "wingetId": "Northwind.SharedUtility",
+      "productCode": null,
+      "categoryHint": "Application"
+    },
+    {
+      "displayName": "Portable Tool",
+      "publisher": "Example Publisher",
+      "displayVersion": "0.9.0",
+      "architecture": "x64",
+      "scope": "User",
+      "installLocation": null,
+      "uninstallString": null,
+      "quietUninstallString": null,
+      "source": "Registry-HKCU",
+      "registryKey": "HKU\\S-1-5-21-0000000000-0000000000-0000000000-1001\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\PortableTool",
+      "userName": "EXAMPLE\\student",
+      "wingetId": null,
+      "productCode": null,
+      "categoryHint": "Application"
+    },
+    {
+      "displayName": "Microsoft Visual C++ 2015-2022 Redistributable (x64)",
+      "publisher": "Microsoft Corporation",
+      "displayVersion": "14.44.35211",
+      "architecture": "x64",
+      "scope": "Machine",
+      "installLocation": null,
+      "uninstallString": "MsiExec.exe /X{44444444-5555-6666-7777-888888888888}",
+      "quietUninstallString": null,
+      "source": "Registry-HKLM-x64",
+      "registryKey": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{44444444-5555-6666-7777-888888888888}",
+      "userName": null,
+      "wingetId": null,
+      "productCode": "{44444444-5555-6666-7777-888888888888}",
+      "categoryHint": "Runtime"
+    },
+    {
+      "displayName": "Update for Windows (KB5060001)",
+      "publisher": "Microsoft Corporation",
+      "displayVersion": "1.0",
+      "architecture": "Any",
+      "scope": "Machine",
+      "installLocation": null,
+      "uninstallString": null,
+      "quietUninstallString": null,
+      "source": "WMI-QFE",
+      "registryKey": null,
+      "userName": null,
+      "wingetId": null,
+      "productCode": null,
+      "categoryHint": "Update"
+    }
+  ],
+  "warnings": ["winget недоступен на тестовом компьютере"]
+}
