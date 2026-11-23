@@ -1,12 +1,20 @@
 ﻿[CmdletBinding()]
 param(
-    [string]$ComputerList = (Join-Path (Split-Path -Parent $PSScriptRoot) "Config\computers.txt"),
-    [string]$PsExec = (Join-Path (Split-Path -Parent $PSScriptRoot) "Tools\PsExec64.exe"),
+    [string]$ComputerList = '',
+    [string]$PsExec = '',
     [string]$RemoteRoot = "C$\ProgramData\ClassroomSoftwareDeploy"
 )
 
 $ErrorActionPreference = "Continue"
-$Root = Split-Path -Parent $PSScriptRoot
+
+. (Join-Path $PSScriptRoot 'Common.ps1')
+$Root = Get-ProjectRoot -StartPath $PSScriptRoot
+if ([string]::IsNullOrWhiteSpace($ComputerList)) {
+    $ComputerList = Resolve-ProjectPath -Root $Root -RelativePath 'Config\computers.txt'
+}
+if ([string]::IsNullOrWhiteSpace($PsExec)) {
+    $PsExec = Resolve-ProjectPath -Root $Root -RelativePath 'Tools\PsExec64.exe'
+}
 
 if (-not (Test-Path $PsExec)) {
     throw "Не найден PsExec64.exe: $PsExec. Скачайте PsExec из Microsoft Sysinternals и положите в Tools."

@@ -1,10 +1,20 @@
 ﻿[CmdletBinding()]
 param(
     [string]$PythonCommand = "py -3.12",
-    [string]$WheelDir = (Join-Path (Split-Path -Parent $PSScriptRoot) "Packages\Python-Wheels"),
-    [string]$Requirements = (Join-Path (Split-Path -Parent $PSScriptRoot) "Config\requirements.txt")
+    [string]$WheelDir = '',
+    [string]$Requirements = ''
 )
 $ErrorActionPreference = "Stop"
+
+. (Join-Path $PSScriptRoot 'Common.ps1')
+$Root = Get-ProjectRoot -StartPath $PSScriptRoot
+if ([string]::IsNullOrWhiteSpace($WheelDir)) {
+    $WheelDir = Resolve-ProjectPath -Root $Root -RelativePath 'Packages\Python-Wheels'
+}
+if ([string]::IsNullOrWhiteSpace($Requirements)) {
+    $Requirements = Resolve-ProjectPath -Root $Root -RelativePath 'Config\requirements.txt'
+}
+
 if (-not (Test-Path $WheelDir)) { throw "Не найдена папка wheelhouse: $WheelDir" }
 if (-not (Test-Path $Requirements)) { throw "Не найден requirements.txt: $Requirements" }
 

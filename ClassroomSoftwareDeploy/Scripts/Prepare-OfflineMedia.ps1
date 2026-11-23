@@ -1,13 +1,19 @@
 ﻿[CmdletBinding()]
 param(
-    [string]$Root = (Split-Path -Parent $PSScriptRoot),
+    [string]$Root = '',
     [switch]$OpenManualPages,
     [switch]$DownloadPythonWheels
 )
 $ErrorActionPreference = 'Stop'
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-$manifestPath = Join-Path $Root 'Config\apps.json'
+. (Join-Path $PSScriptRoot 'Common.ps1')
+if ([string]::IsNullOrWhiteSpace($Root)) {
+    $Root = Get-ProjectRoot -StartPath $PSScriptRoot
+}
+$Root = [System.IO.Path]::GetFullPath($Root)
+
+$manifestPath = Resolve-ProjectPath -Root $Root -RelativePath 'Config\apps.json'
 if (-not (Test-Path $manifestPath)) { throw "Не найден манифест: $manifestPath" }
 $apps = Get-Content -Raw -Encoding UTF8 $manifestPath | ConvertFrom-Json
 $manual = New-Object System.Collections.Generic.List[object]
@@ -20,7 +26,7 @@ foreach ($app in ($apps | Sort-Object Order)) {
     if ($app.Id -eq 'PythonLibraries') { continue }
     $url = [string]$app.DownloadUrl
     $installerName = [string]$app.Installer
-    $appDir = Join-Path (Join-Path $Root 'Packages') ([string]$app.Id)
+    $appDir = Resolve-ProjectPath -Root $Root -RelativePath ('Packages\' + [string]$app.Id)
     New-Item -ItemType Directory -Force -Path $appDir | Out-Null
 
     if ([string]::IsNullOrWhiteSpace($url) -or [string]::IsNullOrWhiteSpace($installerName)) {
@@ -58,15 +64,15 @@ foreach ($app in ($apps | Sort-Object Order)) {
     }
 }
 
-$manualCsv = Join-Path $Root 'Config\MANUAL-DOWNLOADS.csv'
+$manualCsv = Resolve-ProjectPath -Root $Root -RelativePath 'Config\MANUAL-DOWNLOADS.csv'
 $manual | Export-Csv -Path $manualCsv -NoTypeInformation -Encoding UTF8
-$resultsCsv = Join-Path $Root 'Config\OFFLINE-DOWNLOAD-RESULTS.csv'
+$resultsCsv = Resolve-ProjectPath -Root $Root -RelativePath 'Config\OFFLINE-DOWNLOAD-RESULTS.csv'
 $results | Export-Csv -Path $resultsCsv -NoTypeInformation -Encoding UTF8
 
 if ($DownloadPythonWheels) {
-    $wheelDir = Join-Path $Root 'Packages\Python-Wheels'
+    $wheelDir = Resolve-ProjectPath -Root $Root -RelativePath 'Packages\Python-Wheels'
     New-Item -ItemType Directory -Force -Path $wheelDir | Out-Null
-    $requirements = Join-Path $Root 'Config\requirements.txt'
+    $requirements = Resolve-ProjectPath -Root $Root -RelativePath 'Config\requirements.txt'
     $py = Get-Command py.exe -ErrorAction SilentlyContinue
     if (-not $py) { Write-Warning 'Python Launcher (py.exe) не найден. Колёса Python не скачаны.' }
     else {

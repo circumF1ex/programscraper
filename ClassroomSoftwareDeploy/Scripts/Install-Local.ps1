@@ -1,10 +1,17 @@
 ﻿[CmdletBinding()]
 param(
-    [string]$Root = (Split-Path -Parent $PSScriptRoot),
+    [string]$Root = '',
     [switch]$WhatIf
 )
 $ErrorActionPreference = 'Stop'
-$LogDir = Join-Path $Root 'Logs'
+
+. (Join-Path $PSScriptRoot 'Common.ps1')
+if ([string]::IsNullOrWhiteSpace($Root)) {
+    $Root = Get-ProjectRoot -StartPath $PSScriptRoot
+}
+$Root = [System.IO.Path]::GetFullPath($Root)
+
+$LogDir = Resolve-ProjectPath -Root $Root -RelativePath 'Logs'
 New-Item -ItemType Directory -Force -Path $LogDir | Out-Null
 $Log = Join-Path $LogDir ("install-{0}-{1}.log" -f $env:COMPUTERNAME,(Get-Date -Format 'yyyyMMdd-HHmmss'))
 Start-Transcript -Path $Log -Append | Out-Null
@@ -13,7 +20,7 @@ try {
     $principal = New-Object Security.Principal.WindowsPrincipal($identity)
     if (-not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) { throw 'Запустите деплоер от имени администратора.' }
 
-    $manifestPath = Join-Path $Root 'Config\apps.json'
+    $manifestPath = Resolve-ProjectPath -Root $Root -RelativePath 'Config\apps.json'
     if (-not (Test-Path $manifestPath)) { throw "Не найден манифест: $manifestPath" }
     $apps = Get-Content -Raw -Encoding UTF8 $manifestPath | ConvertFrom-Json
     $installed = 0; $skipped = 0; $failed = 0
@@ -27,7 +34,7 @@ try {
         }
         if ($app.Type -eq 'Manual') { Write-Warning 'Этот пункт помечен как Manual и не устанавливается автоматически.'; $skipped++; continue }
 
-        $appDir = Join-Path (Join-Path $Root 'Packages') ([string]$app.Id)
+        $appDir = Resolve-ProjectPath -Root $Root -RelativePath ('Packages\' + [string]$app.Id)
         $installerName = [string]$app.Installer
         if ([string]::IsNullOrWhiteSpace($installerName)) {
             $candidates = @(Get-ChildItem -Path $appDir -File -ErrorAction SilentlyContinue | Where-Object { $_.Extension -match '^\.(exe|msi)$' })
