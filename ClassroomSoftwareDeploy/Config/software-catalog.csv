@@ -1,0 +1,51 @@
+﻿ID;Программа;Тип;Включено по умолчанию;Источник;Особенности
+GoogleChrome;Google Chrome;EXE;Нет;https://www.google.ru/chrome/;"Скачать enterprise/offline installer; указать проверенные тихие аргументы."
+YandexBrowser;Яндекс Браузер;EXE;Нет;https://browser.yandex.ru/;Проверить корпоративный/offline установщик и silent-параметры.
+7zip;7-Zip;EXE;Нет;https://www.7-zip.org/;Выбрать x64 установщик и проверить параметры тихой установки для версии.
+VisualStudio2022;Visual Studio 2022 Community;EXE;Нет;https://visualstudio.microsoft.com/ru/;"Не использовать общий тихий EXE без подготовленного offline layout и response/config; workload C++, .NET, ASP.NET, Unity; проверить лицензию."
+VSCode;Visual Studio Code;EXE;Нет;https://code.visualstudio.com/;"Выбрать System Installer или ZIP; silent args проверить для выбранного инсталлятора."
+Python;Python 3.10+;EXE;Нет;https://www.python.org/downloads/;"Подготовить x64 offline installer; определить версию и параметры установки заранее."
+PythonLibraries;pandas, NumPy, SciPy, Selenium, Pytest;PythonLibraries;Нет;https://pypi.org/;"Wheelhouse в Packages/Python-Wheels; requirements.txt."
+ArduinoIDE;Arduino IDE;EXE;Нет;https://www.arduino.cc/en/software/;"Скачать официальный установщик; проверить silent args и board packages."
+DBeaver;DBeaver Community;EXE;Нет;https://dbeaver.io/download/;"Проверить параметры тихой установки; драйверы СУБД могут скачиваться отдельно."
+pgAdmin;pgAdmin;EXE;Нет;https://www.pgadmin.org/download/;"Если нужен PostgreSQL; автономный установщик и тихие параметры проверить."
+DockerDesktop;Docker Desktop;EXE;Нет;https://www.docker.com/;Требует проверки WSL2/виртуализации, лицензии, перезагрузки и офлайн-зависимостей.
+Git;Git for Windows;EXE;Нет;https://git-scm.com/downloads;Проверить параметры silent установки.
+GitHubDesktop;GitHub Desktop;EXE;Нет;https://desktop.github.com/download/;Проверить offline installer и параметры.
+PaintNET;Paint.NET;EXE;Нет;https://www.getpaint.net/download.html;"Использовать официальный бесплатный desktop installer; проверить quiet args."
+MagicaVoxel;MagicaVoxel;Manual;Нет;https://ephtracy.github.io/#;"Если portable ZIP — распаковать вручную/отдельным шагом; текущий скрипт не обрабатывает архивы."
+Piskel;Piskel;Manual;Нет;https://www.piskelapp.com/download/;"Проверить desktop package; веб-версия требует сеть."
+WickEditor;Wick Editor;Manual;Нет;https://www.wickeditor.com/#/download/;Проверить актуальность desktop-сборки и совместимость.
+LeoCAD;LeoCAD;EXE;Нет;https://www.leocad.org/download.html;Проверить формат и параметры установщика.
+LEGOWeDo;LEGO WeDo 2.0;Manual;Нет;https://education.lego.com/en-us/downloads/retiredproducts/wedo-2/software;"Снято с поддержки; проверить совместимость, происхождение установщика и право использования."
+ScratchDesktop;Scratch Desktop;EXE;Нет;https://scratch.mit.edu/download;"Скачать desktop installer; онлайн-проект и вход могут требовать сеть."
+MinecraftEducation;Minecraft Education;Manual;Нет;https://education.minecraft.net/;"Использовать официальный установщик и действующую лицензию; не использовать патчи/обходы."
+UnityHub;Unity Hub / Unity Editor;Manual;Нет;https://unity.com/download;"Редактор и модули обычно требуют отдельной загрузки и лицензирования; offline полный комплект сложен."
+UnrealEngine;Unreal Engine;Manual;Нет;https://www.unrealengine.com/;"Большой объём; обычно Epic Games Launcher/аккаунт и отдельные компоненты."
+Blender;Blender;EXE;Нет;https://www.blender.org/download/;"Можно подготовить standalone ZIP или installer; проверить тихие параметры."
+GIMP;GIMP;EXE;Нет;https://www.gimp.org/downloads/;Проверить offline installer и quiet args.
+Inkscape;Inkscape;EXE;Нет;https://inkscape.org/release/;Проверить offline installer и quiet args.
+Cura;Ultimaker Cura;EXE;Нет;https://ultimaker.com/software/ultimaker-cura/;Проверить silent args и дополнительные профили/драйверы.
+SketchUp;SketchUp;Manual;Нет;https://www.sketchup.com/;"Учитывать лицензию; некоторые версии требуют аккаунт/онлайн-активацию."
+Godot;Godot Engine;Manual;Нет;https://godotengine.org/download/;"Portable архив; для офлайн-развёртывания можно распаковать отдельным скриптом."
+RobloxStudio;Roblox Studio;Manual;Нет;https://create.roblox.com/;"Требует онлайн-учётную запись/обновления; не считать полностью автономным."
+Construct3;Construct 3;Manual;Нет;https://www.construct.net/;"В основном браузерный продукт; автономный режим и лицензия зависят от плана."
+CodePen;CodePen;Manual;Нет;https://codepen.io/;Веб-сервис, локальная установка не предусмотрена.
+WordPress;WordPress;Manual;Нет;https://wordpress.org/download/;CMS для локального/серверного веб-стека, не обычное desktop-приложение.
+Wokwi;Wokwi;Manual;Нет;https://wokwi.com/;Онлайн-симулятор, требуется сеть.
+Pixlr;Pixlr;Manual;Нет;https://pixlr.com/ru/;"Онлайн-сервис; не офлайн-приложение."
+Convertio;Convertio;Manual;Нет;https://convertio.co/ru/;"Онлайн-сервис; не офлайн-приложение."
+YandexDocs;Яндекс Документы;Manual;Нет;https://docs.yandex.ru/;"Веб-сервис; требует сеть и аккаунт в зависимости от сценария."
+QRCodeMonkey;QRCode Monkey;Manual;Нет;https://www.qrcode-monkey.com/;Веб-сервис.
+Clck;Clck.ru;Manual;Нет;https://clck.ru/;Веб-сервис.
+StaminaOnline;Stamina Online;Manual;Нет;https://stamina-online.com/ru/lessons/ru;Онлайн-тренажёр.
+Flyvi;Flyvi;Manual;Нет;https://flyvi.io/ru;Онлайн-сервис.
+ToonJoy;ToonJoy Animatics;Manual;Нет;https://toonjoy.animatics.ru/;Проверить, есть ли поддерживаемый desktop/offline клиент.
+VoiceBOT;VoiceBOT;Manual;Нет;https://voicebot.su/;Условия и тип дистрибутива уточнить у поставщика.
+CapCut;CapCut;Manual;Нет;https://apps.microsoft.com/detail/xp9kn75rrb9nhs;"MS Store package/region restrictions; не считать автономным без официального offline package."
+SculptGL;SculptGL offline;Manual;Нет;(ваша корпоративная SharePoint-папка);"Доступ к источнику требует корпоративной авторизации; получить пакет легально и проверить содержимое."
+PaintNETAnimationPlugin;Paint.NET animation plugin;Manual;Нет;https://top-academy.site/zr9vybxnrrlyebgmxctg;Проверить источник, совместимость и безопасность плагина перед распространением.
+PivotAnimator;Pivot Animator;Manual;Нет;(уточнить официальный источник);Добавить проверенный официальный установщик.
+Kodu;Kodu Game Lab;Manual;Нет;(уточнить официальный источник);Проверить поддержку и источник дистрибутива.
+TRIKStudio;TRIK Studio;Manual;Нет;(уточнить официальный источник);Добавить проверенный официальный установщик.
+LEGO_Mindstorms;LEGO MINDSTORMS Robot Inventor;Manual;Нет;(уточнить официальный источник);Проверить статус продукта, платформы и лицензии.

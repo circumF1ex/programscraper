@@ -8,3 +8,10 @@ _check2.ps1
 _verify.ps1
 _diag.ps1
 _syntax_check.ps1
+
+# ClassroomSoftwareDeploy: payload и сгенерированные артефакты не хранятся в Git
+ClassroomSoftwareDeploy/Packages/*
+!ClassroomSoftwareDeploy/Packages/README.txt
+ClassroomSoftwareDeploy/Logs/*
+!ClassroomSoftwareDeploy/Logs/.keep
+ClassroomSoftwareDeploy/Config/OFFLINE-DOWNLOAD-RESULTS.csv

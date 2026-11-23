@@ -1,0 +1,27 @@
+﻿Id,Name,OfficialPage,SaveTo,Notes
+YandexBrowser,Яндекс Браузер,https://browser.yandex.ru/,Packages\YandexBrowser\,Проверить корпоративный/offline установщик и silent-параметры.
+VisualStudio2022,Visual Studio 2022 Community,https://visualstudio.microsoft.com/ru/,Packages\VisualStudio2022\,"Не использовать общий тихий EXE без подготовленного offline layout и response/config; workload C++, .NET, ASP.NET, Unity; проверить лицензию."
+ArduinoIDE,Arduino IDE,https://www.arduino.cc/en/software/,Packages\ArduinoIDE\,Скачать официальный установщик; проверить silent args и board packages.
+pgAdmin,pgAdmin,https://www.pgadmin.org/download/,Packages\pgAdmin\,Если нужен PostgreSQL; автономный установщик и тихие параметры проверить.
+DockerDesktop,Docker Desktop,https://www.docker.com/,Packages\DockerDesktop\,"Требует проверки WSL2/виртуализации, лицензии, перезагрузки и офлайн-зависимостей."
+Git,Git for Windows,https://git-scm.com/downloads,Packages\Git\,Проверить параметры silent установки.
+GitHubDesktop,GitHub Desktop,https://desktop.github.com/download/,Packages\GitHubDesktop\,Проверить offline installer и параметры.
+PaintNET,Paint.NET,https://www.getpaint.net/download.html,Packages\PaintNET\,Использовать официальный бесплатный desktop installer; проверить quiet args.
+MagicaVoxel,MagicaVoxel,https://ephtracy.github.io/#,Packages\MagicaVoxel\,Если portable ZIP — распаковать вручную/отдельным шагом; текущий скрипт не обрабатывает архивы.
+Piskel,Piskel,https://www.piskelapp.com/download/,Packages\Piskel\,Проверить desktop package; веб-версия требует сеть.
+WickEditor,Wick Editor,https://www.wickeditor.com/#/download/,Packages\WickEditor\,Проверить актуальность desktop-сборки и совместимость.
+LeoCAD,LeoCAD,https://www.leocad.org/download.html,Packages\LeoCAD\,Проверить формат и параметры установщика.
+LEGOWeDo,LEGO WeDo 2.0,https://education.lego.com/en-us/downloads/retiredproducts/wedo-2/software,Packages\LEGOWeDo\,"Снято с поддержки; проверить совместимость, происхождение установщика и право использования."
+ScratchDesktop,Scratch Desktop,https://scratch.mit.edu/download,Packages\ScratchDesktop\,Скачать desktop installer; онлайн-проект и вход могут требовать сеть.
+MinecraftEducation,Minecraft Education,https://education.minecraft.net/,Packages\MinecraftEducation\,Использовать официальный установщик и действующую лицензию; не использовать патчи/обходы.
+UnityHub,Unity Hub / Unity Editor,https://unity.com/download,Packages\UnityHub\,Редактор и модули обычно требуют отдельной загрузки и лицензирования; offline полный комплект сложен.
+UnrealEngine,Unreal Engine,https://www.unrealengine.com/,Packages\UnrealEngine\,Большой объём; обычно Epic Games Launcher/аккаунт и отдельные компоненты.
+Inkscape,Inkscape,https://inkscape.org/release/,Packages\Inkscape\,Проверить offline installer и quiet args.
+Cura,Ultimaker Cura,https://ultimaker.com/software/ultimaker-cura/,Packages\Cura\,Проверить silent args и дополнительные профили/драйверы.
+SketchUp,SketchUp,https://www.sketchup.com/,Packages\SketchUp\,Учитывать лицензию; некоторые версии требуют аккаунт/онлайн-активацию.
+Godot,Godot Engine,https://godotengine.org/download/,Packages\Godot\,Portable архив; для офлайн-развёртывания можно распаковать отдельным скриптом.
+RobloxStudio,Roblox Studio,https://create.roblox.com/,Packages\RobloxStudio\,Требует онлайн-учётную запись/обновления; не считать полностью автономным.
+ToonJoy,ToonJoy Animatics,https://toonjoy.animatics.ru/,Packages\ToonJoy\,"Проверить, есть ли поддерживаемый desktop/offline клиент."
+VoiceBOT,VoiceBOT,https://voicebot.su/,Packages\VoiceBOT\,Условия и тип дистрибутива уточнить у поставщика.
+CapCut,CapCut,https://apps.microsoft.com/detail/xp9kn75rrb9nhs,Packages\CapCut\,MS Store package/region restrictions; не считать автономным без официального offline package.
+PaintNETAnimationPlugin,Paint.NET animation plugin,https://top-academy.site/zr9vybxnrrlyebgmxctg,Packages\PaintNETAnimationPlugin\,"Проверить источник, совместимость и безопасность плагина перед распространением."
